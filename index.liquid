@@ -1,0 +1,22 @@
+---
+title: COVID-19 R-Effective in US Counties
+data: counties
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <ul>
+      {% for county in counties %}
+      <li>
+        <a href="{{ county.countyName | slug | stripCounty }}-{{ county.stateName | stateAbbrev | slug }}.html">{{ county.countyName }}, {{ county.stateName }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
