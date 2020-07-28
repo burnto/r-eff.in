@@ -85,7 +85,6 @@ module.exports = function (eleventyConfig) {
     //   return "unknown";
     // }
     const n = Number(r);
-    console.log(n, r);
     if (n < 0.8) {
       return "safe";
     } else if (n < 1) {
