@@ -81,9 +81,9 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("severityClass", function (r) {
-    // if (!r) {
-    //   return "unknown";
-    // }
+    if (!r) {
+      return "unknown";
+    }
     const n = Number(r);
     if (n < 0.8) {
       return "safe";
