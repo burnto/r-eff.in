@@ -1,20 +1,13 @@
 ---
+layout: default.liquid
 pagination:
-    data: counties
-    size: 1
-    alias: county
-    title: R-Effective in {{ county.countyName }}
+  data: counties
+  size: 1
+  alias: county
+  title: R-Effective in {{ county.countyName }}
 permalink: "{{ county.countyName | slug | stripCounty }}-{{ county.stateName | stateAbbrev | slug }}.html"
 ---
 
-<!doctype html>
+<h1>R-Effective in {{ county.countyName }}</h1>
 
-<html>
-  <head>
-    <title>COVID-19 R-Effective value in {{county.countyName}}, {{county.stateName}}</title>
-  </head>
-  <body>
-    {{ county.countyName }} is in {{ county.stateName }} with R-Eff {{county.projections.Rt}}
-  </body>
-</html>
-
+<p>R-Eff {{ county.projections.Rt }}</p>

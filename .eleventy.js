@@ -67,7 +67,11 @@ Object.keys(stateAbbrevs).forEach(function (abbrev) {
 });
 
 module.exports = function (eleventyConfig) {
-  // Add a filter using the Config API
+  eleventyConfig.setTemplateFormats([
+    "liquid",
+    "css", // css is not yet a recognized template extension in Eleventy
+  ]);
+
   eleventyConfig.addFilter("stripCounty", function (s) {
     return s.split("-county")[0];
   });

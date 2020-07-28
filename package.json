@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run fetch && eleventy --formats=liquid",
-    "start": "eleventy --serve --formats=liquid",
+    "build": "npm run clean && npm run fetch && eleventy",
+    "start": "eleventy --serve",
     "clean": "rm -rf _site _data",
     "fetch": "mkdir -p _data && curl https://data.covidactnow.org/latest/us/counties.OBSERVED_INTERVENTION.json > _data/counties.json"
   },
