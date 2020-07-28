@@ -1,0 +1,43 @@
+main,
+footer {
+  padding: 1em;
+  text-align: center;
+}
+
+article {
+  display: inline-block;
+  padding: 4em;
+  border: 1px solid gray;
+}
+
+a.na {
+  color: #ccc;
+}
+
+article h2 {
+  margin: 0;
+}
+article section p {
+  margin: 0;
+  font-size: 5em;
+}
+
+.unknown {
+  background-color: lightgray;
+  color: gray;
+}
+.safe {
+  background-color: #3f3;
+}
+.moderate {
+  background-color: #ff6;
+}
+.risk {
+  background-color: #ff0;
+}
+.danger {
+  background-color: orange;
+}
+.severe {
+  background-color: red;
+}

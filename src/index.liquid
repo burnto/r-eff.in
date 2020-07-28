@@ -1,0 +1,17 @@
+---
+layout: default.liquid
+data: counties
+---
+
+<h1>{{ globals.title }}</h1>
+{% for county in counties %}
+<p>
+  <a
+    class="{% unless county.projections.Rt %}na{% endunless %}"
+    href="{{ county.countyName | slug | stripCounty }}-{{
+      county.stateName | stateAbbrev | slug
+    }}.html"
+    >{{ county.countyName }}, {{ county.stateName }}</a
+  >
+</p>
+{% endfor %}

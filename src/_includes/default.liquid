@@ -2,9 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+
+    {% if renderData.title %}
+    <title>{{ renderData.title | safe }} | {{ globals.title | safe }}</title>
+    {% elsif title %}
+    <title>{{ title | safe }} | {{ globals.title | safe }}</title>
+    {% else %}
+    <title>{{ globals.title | safe }}</title>
+    {% endif %}
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic" />
     <link rel="stylesheet" href="/style.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <main>

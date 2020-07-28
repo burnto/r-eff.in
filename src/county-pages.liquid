@@ -1,0 +1,23 @@
+---
+layout: default.liquid
+pagination:
+  data: counties
+  size: 1
+  alias: county
+permalink: "{{ county.countyName | slug | stripCounty }}-{{ county.stateName | stateAbbrev | slug }}.html"
+renderData:
+  title: "{{ county.countyName }}, {{ county.stateName | stateAbbrev }}"
+---
+
+<article class="{{ county.projections.Rt | severityClass }}">
+  <header>
+    <h2>R-Effective in {{ county.countyName }}</h2>
+  </header>
+  <section>
+    <p>
+      {% if county.projections.Rt %}
+      {{ county.projections.Rt | roundRt }}
+      {% else %} N/A {% endif %}
+    </p>
+  </section>
+</article>

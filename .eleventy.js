@@ -69,8 +69,35 @@ Object.keys(stateAbbrevs).forEach(function (abbrev) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats([
     "liquid",
+    "ico",
+    "png",
+    "webmanifest",
+    "xml",
     "css", // css is not yet a recognized template extension in Eleventy
   ]);
+
+  eleventyConfig.addFilter("roundRt", function (r) {
+    return Number(r).toFixed(2);
+  });
+
+  eleventyConfig.addFilter("severityClass", function (r) {
+    // if (!r) {
+    //   return "unknown";
+    // }
+    const n = Number(r);
+    console.log(n, r);
+    if (n < 0.8) {
+      return "safe";
+    } else if (n < 1) {
+      return "moderate";
+    } else if (n < 1.1) {
+      return "risk";
+    } else if (n < 1.25) {
+      return "danger";
+    } else {
+      return "severe";
+    }
+  });
 
   eleventyConfig.addFilter("stripCounty", function (s) {
     return s.split("-county")[0];
