@@ -1,13 +1,16 @@
 main,
 footer {
-  padding: 1em;
+  padding: 50px;
   text-align: center;
 }
 
 article {
   display: inline-block;
   padding: 4em;
-  border: 1px solid gray;
+  filter: drop-shadow(
+    0 6mm 4mm rgba(0, 0, 0, 0.5)
+  ); /* border: 1px solid gray; */
+  max-width: 900px;
 }
 
 a.na {
@@ -16,28 +19,60 @@ a.na {
 
 article h2 {
   margin: 0;
+  font-size: 2.5vw;
 }
 article section p {
   margin: 0;
   font-size: 5em;
 }
+article h1 {
+  font-size: 6vw;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 0.3em 0;
+}
 
-.unknown {
+article.unknown {
   background-color: lightgray;
   color: gray;
 }
-.safe {
+article.verylow {
   background-color: #3f3;
 }
-.moderate {
+article.low {
+  background-color: #3f3;
+}
+article.medium {
   background-color: #ff6;
 }
-.risk {
+article.high {
   background-color: #ff0;
 }
-.danger {
+article.veryhigh {
   background-color: orange;
 }
-.severe {
+article.severe {
   background-color: red;
 }
+
+a.unknown {
+  color: #999;
+}
+/* a.verylow {
+  color: #3f3;
+}
+a.low {
+  color: #3f3;
+}
+a.medium {
+  color: #ff6;
+}
+a.high {
+  color: #ff0;
+}
+a.veryhigh {
+  color: orange;
+}
+a.severe {
+  color: red;
+} */

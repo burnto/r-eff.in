@@ -3,11 +3,12 @@ layout: default.liquid
 data: counties
 ---
 
-<h1>{{ globals.title }}</h1>
+<h1>How fucked is your county?</h1>
+
 {% for county in counties %}
 <p>
   <a
-    class="{% unless county.projections.Rt %}na{% endunless %}"
+    class="{{ county.projections.Rt | severityClass }}"
     href="{{ county.countyName | slug | stripCounty }}-{{
       county.stateName | stateAbbrev | slug
     }}.html"
@@ -15,3 +16,5 @@ data: counties
   >
 </p>
 {% endfor %}
+
+<h2>({{ globals.title }})</h2>

@@ -6,18 +6,27 @@ pagination:
   alias: county
 permalink: "{{ county.countyName | slug | stripCounty }}-{{ county.stateName | stateAbbrev | slug }}.html"
 renderData:
-  title: "{{ county.countyName }}, {{ county.stateName | stateAbbrev }}"
+  title: "{{ county.countyName }}, {{ county.stateName | stateAbbrev }}
+  "
 ---
 
-<article class="{{ county.projections.Rt | severityClass }}">
+<article
+  style="transform: rotate({{ title | randomAngle }}deg)"
+  class="{{ county.projections.Rt | severityClass }}"
+>
   <header>
-    <h2>R-Effective in {{ county.countyName }}</h2>
+    <h2>
+      {{ county.countyName }}
+      <br />
+
+      {% if county.projections.Rt %} R<sub>t</sub> =
+      {{ county.projections.Rt | roundRt }}
+      {% endif %}
+    </h2>
   </header>
   <section>
-    <p>
-      {% if county.projections.Rt %}
-      {{ county.projections.Rt | roundRt }}
-      {% else %} N/A {% endif %}
-    </p>
+    <h1>
+      {{ county.projections.Rt | expletives }}
+    </h1>
   </section>
 </article>
