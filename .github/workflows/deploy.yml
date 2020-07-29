@@ -8,4 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -X POST -d {} https://api.netlify.com/build_hooks/5f20ab65bf4bb79abd9e09bc
+      - shell: bash
+        env:
+          NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: curl -X POST -d {} $NETLIFY_BUILD_HOOK_URL
