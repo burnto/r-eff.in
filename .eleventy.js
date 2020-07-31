@@ -82,7 +82,7 @@ module.exports = function (eleventyConfig) {
         "possibly fucked but hard to say",
         "probably best we don't know how fucked they are",
         "if a county is fucked in the woods does it make a sound?",
-        "no data but plenty of jesus",
+        // "no data but plenty of jesus",
         "doesnt know how fucked it is"
       );
     }
